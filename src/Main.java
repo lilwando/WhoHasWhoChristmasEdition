@@ -16,7 +16,7 @@ public class Main {
         for (int i=0; i < availableNames.length; i++) {
             File plik = new File (availableNames[i] + ".txt");
             int n = randomNumberGenerator.nextInt(availableNames.length);
-            while (usedNumbers.contains(n))
+            while (usedNumbers.contains(n) || i == n)
             {
                 n = randomNumberGenerator.nextInt(availableNames.length);
             }
@@ -24,7 +24,7 @@ public class Main {
             PrintWriter zapis = new PrintWriter(availableNames[i] + ".txt");
             zapis.println("Wylosowana osoba to " + availableNames[n]);
             zapis.close();
-        }
+            }
 
+        }
     }
-}
